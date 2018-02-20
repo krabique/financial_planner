@@ -24,3 +24,5 @@ info
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+test_results/**/*
