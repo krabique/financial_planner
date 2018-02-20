@@ -2,3 +2,14 @@ require: rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.4
+  Exclude:
+    - db/schema.rb
+    - vendor/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - bin/setup
+    - bin/update
