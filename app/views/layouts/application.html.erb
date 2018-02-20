@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinancialPlanner</title>
+    <title>Plan that Finance, baby</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/flash_messages' if !flash.empty? %>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
