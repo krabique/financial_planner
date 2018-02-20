@@ -77,13 +77,13 @@ jobs:
 
       # Run reek
       - run:
-        name: reek
-        command: bundle exec reek .
+          name: reek
+          command: bundle exec reek .
 
       # Run rubocop
       - run:
-        name: rubocop
-        command: bundle exec rubocop
+          name: rubocop
+          command: bundle exec rubocop
 
       # Save test results for timing analysis
       - store_test_results:
