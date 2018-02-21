@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title
+      | Plan that Finance, baby
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'
+    = stylesheet_pack_tag 'bootstrap'
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+  body
+    = render 'shared/flash_messages' if !flash.empty?
+    .container
+      .card
+        .card-body
+          = yield
