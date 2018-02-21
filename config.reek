@@ -16,6 +16,15 @@
 "app/channels":
   IrresponsibleModule:
     enabled: false
+"app/mailers":
+  IrresponsibleModule:
+    enabled: false
+"config":
+  IrresponsibleModule:
+    enabled: false
+"app/models":
+  IrresponsibleModule:
+    enabled: false
 
 exclude_paths:
   - vendor
