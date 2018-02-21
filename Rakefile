@@ -7,3 +7,6 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+# rake will still run specs first because of the rspec-rails gem
+task default: %i[reek rubocop]
