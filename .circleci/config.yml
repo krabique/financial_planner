@@ -70,7 +70,7 @@ jobs:
       - run:
           name: rspec
           command: |
-            bundle exec rspec ~/financial_planner \
+            bundle exec rspec ~/financial_planner/spec \
                               --profile 10 \
                               --format RspecJunitFormatter \
                               --out test_results/rspec.xml \
