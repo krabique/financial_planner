@@ -80,7 +80,7 @@ jobs:
       # Run reek
       - run:
           name: reek
-          command: bundle exec reek ~/financial_planner
+          command: bundle exec reek
 
       # Run rubocop
       - run:
