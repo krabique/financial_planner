@@ -4,7 +4,7 @@ jobs:
     parallelism: 3
     working_directory: ~/financial_planner
     docker:
-      - image: circleci/ruby:2.5-node
+      - image: circleci/ruby:2.5-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -67,23 +67,25 @@ jobs:
           command: bin/rails db:schema:load --trace
 
       # Run rspec in parallel
-      - type: shell
-        command: |
-          bundle exec rspec --profile 10 \
-                            --format RspecJunitFormatter \
-                            --out test_results/rspec.xml \
-                            --format progress \
-                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - run:
+          name: rspec
+          command: |
+            bundle exec rspec ~/financial_planner \
+                              --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out test_results/rspec.xml \
+                              --format progress \
+                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
       # Run reek
       - run:
           name: reek
-          command: bundle exec reek .
+          command: bundle exec reek ~/financial_planner
 
       # Run rubocop
       - run:
           name: rubocop
-          command: bundle exec rubocop
+          command: bundle exec rubocop ~/financial_planner
 
       # Save test results for timing analysis
       - store_test_results:
