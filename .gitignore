@@ -19,7 +19,9 @@
 .byebug_history
 
 info
-.env/public/packs
+.env
+
+/public/packs
 /public/packs-test
 /node_modules
 yarn-debug.log*
