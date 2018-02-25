@@ -19,5 +19,11 @@ module FinancialPlanner
     # -- all .rb files in that directory are automatically loaded.
 
     config.time_zone = 'Minsk'
+
+    # Mailer config
+    config.action_mailer.perform_caching = false
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :smtp
   end
 end
