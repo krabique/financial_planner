@@ -31,6 +31,8 @@ html
                 = link_to('Login', new_user_session_path, class:  "nav-link")
               li.nav-item.active
                 = link_to('Register', new_user_registration_path, class:  "nav-link")
+              li.nav-item.active
+                = link_to('Google', user_google_oauth2_omniauth_authorize_path, class:  "nav-link")
 
     .container
       = render 'shared/flash_messages' if !flash.empty?
