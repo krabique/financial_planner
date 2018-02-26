@@ -2,12 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.feature 'SignUpsAndLogIns', type: :feature do
+RSpec.describe 'SignUpsAndLogIns', type: :feature do
   let(:name) { Faker::DrWho.character }
   let(:email) { Faker::Internet.email }
   let(:password) { Faker::Internet.password }
 
-  scenario 'a visitor can sign up' do
+  it 'lets a visitor sign up' do
     expect do
       visit '/users/sign_up'
 

@@ -45,9 +45,6 @@ RSpec/ImplicitExpect:
   Exclude:
     - spec/models/**/*
 
-Capybara/FeatureMethods:
-  Enabled: false
-
 RSpec/ContextWording:
   Exclude:
     - spec/models/**/*

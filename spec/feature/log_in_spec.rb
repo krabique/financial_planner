@@ -2,12 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.feature 'SignUpsAndLogIns', type: :feature do
+RSpec.describe 'SignUpsAndLogIns', type: :feature do
   let(:name) { Faker::DrWho.character }
   let(:email) { Faker::Internet.email }
   let(:password) { Faker::Internet.password }
 
-  scenario 'a visitor can log in' do
+  it 'lets a visitor log in' do
     user = User.create(name: name, email: email, password: password)
     user.update(confirmed_at: Time.current)
 
