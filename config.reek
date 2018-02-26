@@ -8,6 +8,8 @@
 "app/helpers":
   IrresponsibleModule:
     enabled: false
+  ControlParameter:
+    enabled: false
   UtilityFunction:
     enabled: false
 "app/jobs":
@@ -28,3 +30,4 @@
 
 exclude_paths:
   - vendor
+  - db

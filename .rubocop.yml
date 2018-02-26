@@ -14,5 +14,26 @@ Style/MixinUsage:
   Exclude:
     - bin/setup
     - bin/update
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - app/controllers/users/**/*
+
+Metrics/LineLength:
+  Exclude:
+    - config/initializers/**/*
+    - db/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/initializers/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/**/*
+Metrics/AbcSize:
+  Exclude:
+    - db/**/*

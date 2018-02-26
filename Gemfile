@@ -38,8 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'webpacker', '~> 3.2'
 
-gem 'simple_form'
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
