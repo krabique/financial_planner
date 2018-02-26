@@ -43,3 +43,7 @@ InstanceVariableAssumption:
 UncommunicativeMethodName:
   exclude:
     - "Users::OmniauthCallbacksController#google_oauth2"
+
+ControlParameter:
+  exclude:
+    - "Users::RegistrationsController#oauth_provider_humanized"
