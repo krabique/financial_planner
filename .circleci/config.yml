@@ -12,7 +12,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: circleci
           RAILS_ENV: test
-      - image: circleci/postgres:9.3-alpine
+      - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: circleci
           POSTGRES_DB: financial_planner_test
@@ -70,12 +70,12 @@ jobs:
       - run:
           name: rspec
           command: |
-            bundle exec rspec ~/financial_planner/spec \
-                              --profile 10 \
-                              --format RspecJunitFormatter \
-                              --out test_results/rspec.xml \
-                              --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bundle exec rspec \
+              --profile 10 \
+              --format RspecJunitFormatter \
+              --out test_results/rspec.xml \
+              --format progress \
+              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
       # Run reek
       - run:
@@ -85,7 +85,7 @@ jobs:
       # Run rubocop
       - run:
           name: rubocop
-          command: bundle exec rubocop ~/financial_planner
+          command: bundle exec rubocop
 
       # Save test results for timing analysis
       - store_test_results:
