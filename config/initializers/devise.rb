@@ -256,6 +256,9 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'],
                   ENV['GOOGLE_SECRET'], scope: 'email, profile'
 
+  config.omniauth :github, ENV['GITHUB_CLIENT_ID'],
+                  ENV['GITHUB_SECRET'], scope: 'user'
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
