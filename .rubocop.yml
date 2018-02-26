@@ -36,6 +36,7 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Exclude:
     - db/**/*
+
 Metrics/AbcSize:
   Exclude:
     - db/**/*
