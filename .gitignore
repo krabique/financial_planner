@@ -20,3 +20,13 @@
 
 info
 .env
+
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+
+test_results/**/*
+
+.editorconfig
