@@ -21,7 +21,6 @@ Style/EmptyMethod:
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
   Exclude:
-    - app/controllers/users/**/*
     - config/application.rb
 
 Metrics/LineLength:
