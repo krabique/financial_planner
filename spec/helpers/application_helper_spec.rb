@@ -4,11 +4,18 @@ require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
   describe '#flash_class' do
-    it 'returns the appropriate flash class name' do
-      expect(flash_class(:notice)).to eq 'alert alert-info'
-      expect(flash_class(:success)).to eq 'alert alert-success'
-      expect(flash_class(:error)).to eq 'alert alert-danger'
-      expect(flash_class(:alert)).to eq 'alert alert-danger'
+    expected_values = {
+      notice: 'alert alert-info',
+      success: 'alert alert-success',
+      error: 'alert alert-danger',
+      alert: 'alert alert-danger'
+    }
+
+    expected_values.each do |type, css_class|
+      it "returns '#{css_class}' when flash type is '#{type}'" do
+        result = flash_class(type)
+        expect(result).to eq(css_class)
+      end
     end
   end
 end
