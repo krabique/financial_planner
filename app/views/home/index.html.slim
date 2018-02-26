@@ -1,1 +1,4 @@
-h1 Hello, world!
+- if current_user
+  p.text-center Welcome back, #{current_user.name}!
+- else
+  p.text-center Please, log in or sign up to access the financial tracker.
