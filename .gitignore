@@ -30,3 +30,5 @@ yarn-debug.log*
 test_results/**/*
 
 .editorconfig
+
+/public/uploads
