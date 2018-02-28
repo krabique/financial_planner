@@ -22,7 +22,8 @@ class User < ApplicationRecord
       uid: auth.uid,
       email: auth.info.email,
       password: Devise.friendly_token[0, 20],
-      confirmed_at: Time.current
+      confirmed_at: Time.current,
+      remote_avatar_url: auth.info.image
     }
   end
 
