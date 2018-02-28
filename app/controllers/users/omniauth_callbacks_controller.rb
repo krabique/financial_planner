@@ -46,7 +46,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def redirect_when_duplicate_email
     redirect_to new_user_session_path, flash: { error: 'There is already a ' \
-      'user with that email. If it is you, please, log in with your email ' \
-      'instead.' }
+      'user with that email. If it is you, please, log in with your email, ' \
+      'or the provider that you have signed up with instead.' }
   end
 end
