@@ -73,10 +73,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def authorize_account_edit
     provider = current_user.provider
     if provider
-      redirect_to root_path, flash: { error: "Can't edit your profile, " \
-        'since it is linked to ' \
+      redirect_to root_path, flash: {error: "Can't edit your profile, " \
+        "since it is linked to " \
         "#{oauth_provider_humanized(provider)}. You will have " \
-        ' to change your info there.' }
+        " to change your info there."}
     end
   end
 end
