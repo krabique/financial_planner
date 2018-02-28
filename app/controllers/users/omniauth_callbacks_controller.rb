@@ -31,10 +31,22 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @user = User.from_omniauth(request.env['omniauth.auth'])
     sign_in_and_redirect @user
+  rescue ActiveRecord::RecordInvalid
+    redirect_when_duplicate_email
   end
 
   def github
     @user = User.from_omniauth(request.env['omniauth.auth'])
     sign_in_and_redirect @user
+  rescue ActiveRecord::RecordInvalid
+    redirect_when_duplicate_email
+  end
+
+  private
+
+  def redirect_when_duplicate_email
+    redirect_to new_user_session_path, flash: { error: 'There is already a ' \
+      'user with that email. If it is you, please, log in with your email ' \
+      'instead.' }
   end
 end
