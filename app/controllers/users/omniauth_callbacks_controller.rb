@@ -29,20 +29,21 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
 
   def google_oauth2
-    @user = User.from_omniauth(request.env['omniauth.auth'])
-    sign_in_and_redirect @user
-  rescue ActiveRecord::RecordInvalid
-    redirect_when_duplicate_email
+    handle_oauth
   end
 
   def github
+    handle_oauth
+  end
+
+  private
+
+  def handle_oauth
     @user = User.from_omniauth(request.env['omniauth.auth'])
     sign_in_and_redirect @user
   rescue ActiveRecord::RecordInvalid
     redirect_when_duplicate_email
   end
-
-  private
 
   def redirect_when_duplicate_email
     redirect_to new_user_session_path, flash: { error: 'There is already a ' \
