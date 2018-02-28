@@ -8,8 +8,6 @@
 "app/helpers":
   IrresponsibleModule:
     enabled: false
-  ControlParameter:
-    enabled: false
   UtilityFunction:
     enabled: false
 "app/jobs":
@@ -47,3 +45,7 @@ UncommunicativeMethodName:
 ControlParameter:
   exclude:
     - "Users::RegistrationsController#oauth_provider_humanized"
+
+"app/cells":
+  ControlParameter:
+    enabled: false

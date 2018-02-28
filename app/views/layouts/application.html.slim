@@ -49,7 +49,7 @@ html
                 = link_to('Register', new_user_registration_path, class:  "nav-link")
 
     .container
-      = render 'shared/flash_messages' if !flash.empty?
+      = cell(FlashCell).call
       .card
         .card-body
           = yield
