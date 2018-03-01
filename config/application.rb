@@ -27,6 +27,6 @@ module FinancialPlanner
     config.action_mailer.delivery_method = :smtp
 
     # Cells config
-    config.cells.with_assets = ['flash_cell']
+    # config.cells.with_assets = %w[flash_cell navbar_cell]
   end
 end
