@@ -22,4 +22,9 @@ class NavbarCell < Cell::ViewModel
   def tag_builder
     super.tap { |builder| builder.class_eval { include Cell::Slim::Rails } }
   end
+
+  def current_user_link(path)
+    @path = path
+    render
+  end
 end
