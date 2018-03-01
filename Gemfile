@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'webpacker', '~> 3.2'
 
+gem 'devise'
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
@@ -45,6 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
   gem 'reek', require: false
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.52.1', require: false
@@ -64,7 +68,9 @@ group :development do
 end
 
 group :test do
+  gem 'faker'
   gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

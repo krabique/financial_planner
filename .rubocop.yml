@@ -14,5 +14,40 @@ Style/MixinUsage:
   Exclude:
     - bin/setup
     - bin/update
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - config/application.rb
+
+Metrics/LineLength:
+  Exclude:
+    - config/initializers/**/*
+    - db/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/initializers/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/**/*
+
+Metrics/AbcSize:
+  Exclude:
+    - db/**/*
+
+RSpec/ImplicitExpect:
+  Exclude:
+    - spec/models/**/*
+
+RSpec/ContextWording:
+  Exclude:
+    - spec/models/**/*
+
+RSpec/ExampleLength:
+  Exclude:
+    - spec/feature/**/*
