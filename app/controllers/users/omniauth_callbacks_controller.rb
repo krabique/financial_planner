@@ -19,7 +19,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def redirect_when_duplicate_email
-    redirect_to new_user_session_path, flash: { 
-      error: I18n.t('errors.redirect_when_duplicate_email') }
+    redirect_to new_user_session_path, flash: {
+      error: I18n.t('errors.redirect_when_duplicate_email')
+    }
   end
 end
