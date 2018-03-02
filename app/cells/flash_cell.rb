@@ -3,8 +3,12 @@
 # The flash messages cell
 class FlashCell < Cell::ViewModel
   def show
-    @flash = parent_controller.flash
+    flash
     render
+  end
+
+  def flash
+    @flash ||= parent_controller.flash
   end
 
   private
