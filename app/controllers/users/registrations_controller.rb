@@ -25,7 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def oauth_provider_humanized(type)
     case type
-    when 'google_oauth2' then 'Google'
+    when 'google' then 'Google'
     when 'github' then 'GitHub'
     end
   end
