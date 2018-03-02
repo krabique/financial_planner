@@ -23,20 +23,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def oauth_provider_humanized(type)
-    case type
+  def oauth_provider_humanized
+    case provider
     when 'google' then 'Google'
     when 'github' then 'GitHub'
     end
   end
 
-  def authorize_account_edit
-    provider = current_user.provider
-    if provider
-      redirect_to root_path, flash: { error: "Can't edit your profile, " \
-        'since it is linked to ' \
-        "#{oauth_provider_humanized(provider)}. You will have " \
-        ' to change your info there.' }
-    end
+  def provider
+    current_user.provider
   end
+
+  def authorize_account_edit
+    reject_oauth_editing if provider
+  end
+
+  def reject_oauth_editing
+    redirect_to root_path, flash: {
+      error: I18n.t('errors.edit_oauth_profile', provider:
+        oauth_provider_humanized)
+    }
+  end
+
+  # def oauth_provider_humanized(type)
+  #   case type
+  #   when 'google' then 'Google'
+  #   when 'github' then 'GitHub'
+  #   end
+  # end
+
+  # def authorize_account_edit
+  #   provider = current_user.provider
+  #   if provider
+  #     redirect_to root_path, flash: { error: "Can't edit your profile, " \
+  #       'since it is linked to ' \
+  #       "#{oauth_provider_humanized(provider)}. You will have " \
+  #       ' to change your info there.' }
+  #   end
+  # end
 end

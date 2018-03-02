@@ -30,4 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    edit_oauth_profile:
+      "Can't edit your profile, 
+      since it is linked to
+      %{provider}. You will have
+      to change your info there."
