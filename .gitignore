@@ -32,3 +32,4 @@ test_results/**/*
 .editorconfig
 
 /public/uploads
+.DS_Store

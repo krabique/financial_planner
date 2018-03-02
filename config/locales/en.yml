@@ -30,4 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    edit_oauth_profile:
+      "Can't edit your profile, 
+      since it is linked to
+      %{provider}. You will have
+      to change your info there."
+    redirect_when_duplicate_email:
+      'There is already a
+      user with that email. If it is you, please, log in with your email,
+      or the provider that you have signed up with instead.'

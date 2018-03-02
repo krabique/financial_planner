@@ -5,49 +5,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :authorize_account_edit, only: %i[edit update]
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
-
-  # POST /resource
-  # def create
-  #   super
-  # end
-
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
-  #   super
-  # end
-
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
-
-  # protected
-
-  # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys:
       %i[name avatar avatar_cache remove_avatar])
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys:
       %i[name avatar avatar_cache remove_avatar])
@@ -63,20 +25,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def oauth_provider_humanized(type)
-    case type
-    when 'google_oauth2' then 'Google'
+  def oauth_provider_humanized
+    case provider
+    when 'google' then 'Google'
     when 'github' then 'GitHub'
     end
   end
 
-  def authorize_account_edit
-    provider = current_user.provider
-    if provider
-      redirect_to root_path, flash: { error: "Can't edit your profile, " \
-        'since it is linked to ' \
-        "#{oauth_provider_humanized(provider)}. You will have " \
-        ' to change your info there.' }
-    end
+  def provider
+    current_user.provider
   end
+
+  def authorize_account_edit
+    reject_oauth_editing if provider
+  end
+
+  def reject_oauth_editing
+    redirect_to root_path, flash: {
+      error: I18n.t('errors.edit_oauth_profile', provider:
+        oauth_provider_humanized)
+    }
+  end
+
+  # def oauth_provider_humanized(type)
+  #   case type
+  #   when 'google' then 'Google'
+  #   when 'github' then 'GitHub'
+  #   end
+  # end
+
+  # def authorize_account_edit
+  #   provider = current_user.provider
+  #   if provider
+  #     redirect_to root_path, flash: { error: "Can't edit your profile, " \
+  #       'since it is linked to ' \
+  #       "#{oauth_provider_humanized(provider)}. You will have " \
+  #       ' to change your info there.' }
+  #   end
+  # end
 end
