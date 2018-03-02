@@ -17,6 +17,12 @@ Bundler/DuplicatedGem:
 Bundler/OrderedGems:
   TreatCommentsAsGroupSeparators: true
 
+Style/MixinUsage:
+  Exclude:
+    - bin/setup
+    - bin/update
+    - bin/test
+
 Layout/AccessModifierIndentation:
   EnforcedStyle: indent
 
