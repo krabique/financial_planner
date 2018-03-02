@@ -32,9 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def provider
-    current_user.provider
-  end
+  delegate :provider, to: :current_user
 
   def authorize_account_edit
     reject_oauth_editing if provider
@@ -46,21 +44,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
         oauth_provider_humanized)
     }
   end
-
-  # def oauth_provider_humanized(type)
-  #   case type
-  #   when 'google' then 'Google'
-  #   when 'github' then 'GitHub'
-  #   end
-  # end
-
-  # def authorize_account_edit
-  #   provider = current_user.provider
-  #   if provider
-  #     redirect_to root_path, flash: { error: "Can't edit your profile, " \
-  #       'since it is linked to ' \
-  #       "#{oauth_provider_humanized(provider)}. You will have " \
-  #       ' to change your info there.' }
-  #   end
-  # end
 end

@@ -5,8 +5,6 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-danger
       span.navbar-toggler-icon
     #navbar.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
-        li.nav-item.active
-          = link_to 'Link 1', root_path, class: "nav-link"
       ul.navbar-nav
         - if user_signed_in?
           - if current_user.provider
@@ -14,15 +12,15 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-danger
           - else
             = current_user_link(edit_user_registration_path)
           li.nav-item.active
-            = link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link")
+            = link_to(I18n.t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link")
         - else
           li.nav-item.active
-            = link_to user_google_oauth2_omniauth_authorize_path, class:  "nav-link" do
+            = link_to user_google_omniauth_authorize_path, class:  "nav-link" do
               i.fa.fa-google[aria-hidden="true"]
           li.nav-item.active
             = link_to user_github_omniauth_authorize_path, class:  "nav-link" do
               i.fa.fa-github[aria-hidden="true"]
           li.nav-item.active
-            = link_to('Login', new_user_session_path, class:  "nav-link")
+            = link_to(I18n.t('navbar.login'), new_user_session_path, class:  "nav-link")
           li.nav-item.active
-            = link_to('Register', new_user_registration_path, class:  "nav-link")
+            = link_to(I18n.t('navbar.signup'), new_user_registration_path, class:  "nav-link")

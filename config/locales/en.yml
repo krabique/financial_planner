@@ -40,3 +40,8 @@ en:
       'There is already a
       user with that email. If it is you, please, log in with your email,
       or the provider that you have signed up with instead.'
+  navbar:
+    logout: 'Logout'
+    login: 'Log in'
+    signup: 'Register'
+    hi_username: "Hi, %{name}"
