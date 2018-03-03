@@ -35,7 +35,8 @@ class OauthService
       uid: auth.uid,
       email: auth_personal_info.email,
       password: Devise.friendly_token[0, 20],
-      confirmed_at: Time.current
+      confirmed_at: Time.current,
+      remote_avatar_url: auth_personal_info.image
     }
   end
 end

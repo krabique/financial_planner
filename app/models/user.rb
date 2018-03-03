@@ -11,4 +11,7 @@ class User < ApplicationRecord
          omniauth_providers: %i[google github]
 
   validates :name, presence: true
+
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
 end
