@@ -52,7 +52,3 @@ RSpec/ContextWording:
 RSpec/ExampleLength:
   Exclude:
     - spec/feature/**/*
-
-Style/GuardClause:
-  Exclude:
-    - app/controllers/users/registrations_controller.rb
