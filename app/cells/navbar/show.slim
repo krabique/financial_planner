@@ -15,12 +15,12 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-danger
             = link_to(I18n.t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link")
         - else
           li.nav-item.active
-            = link_to user_google_omniauth_authorize_path, class:  "nav-link" do
+            = link_to user_google_omniauth_authorize_path, class: "nav-link" do
               i.fa.fa-google[aria-hidden="true"]
           li.nav-item.active
-            = link_to user_github_omniauth_authorize_path, class:  "nav-link" do
+            = link_to user_github_omniauth_authorize_path, class: "nav-link" do
               i.fa.fa-github[aria-hidden="true"]
           li.nav-item.active
-            = link_to(I18n.t('navbar.login'), new_user_session_path, class:  "nav-link")
+            = link_to(I18n.t('navbar.login'), new_user_session_path, class: "nav-link")
           li.nav-item.active
-            = link_to(I18n.t('navbar.signup'), new_user_registration_path, class:  "nav-link")
+            = link_to(I18n.t('navbar.signup'), new_user_registration_path, class: "nav-link")
