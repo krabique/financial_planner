@@ -27,13 +27,13 @@ class OauthService
   end
 
   def oauth_user_credentials
-    auth_info = auth.info
+    auth_personal_info = auth.info
 
     {
-      name: auth_info.name,
+      name: auth_personal_info.name,
       provider: auth.provider,
       uid: auth.uid,
-      email: auth_info.email,
+      email: auth_personal_info.email,
       password: Devise.friendly_token[0, 20],
       confirmed_at: Time.current
     }
