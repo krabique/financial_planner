@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'SignUpsAndLogIns', type: :feature do
+RSpec.describe 'SignUpWithEmail', type: :feature do
   let(:name) { Faker::DrWho.character }
   let(:email) { Faker::Internet.email }
   let(:password) { Faker::Internet.password }
