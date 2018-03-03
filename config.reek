@@ -31,19 +31,3 @@
 exclude_paths:
   - vendor
   - db
-
-DuplicateMethodCall:
-  exclude:
-    - "User#self.oauth_user_credentials"
-
-InstanceVariableAssumption:
-  exclude:
-    - "Users::OmniauthCallbacksController"
-
-UncommunicativeMethodName:
-  exclude:
-    - "Users::OmniauthCallbacksController#google_oauth2"
-
-ControlParameter:
-  exclude:
-    - "Users::RegistrationsController#oauth_provider_humanized"
