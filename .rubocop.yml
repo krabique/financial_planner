@@ -209,3 +209,4 @@ Metrics/BlockLength:
 Style/MixinUsage:
   Exclude:
     - 'bin/**/*'
+    - spec/feature/**/*

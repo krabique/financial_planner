@@ -11,9 +11,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
 
+  def user
+    @user ||= OauthService.process_user(request.env['omniauth.auth'])
+  end
+
   def handle_oauth
-    @user = User.from_omniauth(request.env['omniauth.auth'])
-    sign_in_and_redirect @user
+    sign_in_and_redirect user
   rescue ActiveRecord::RecordInvalid
     redirect_when_duplicate_email
   end

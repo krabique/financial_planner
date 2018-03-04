@@ -32,20 +32,12 @@ exclude_paths:
 
 DuplicateMethodCall:
   exclude:
-    - "User#self.oauth_user_credentials"
-
-InstanceVariableAssumption:
-  exclude:
-    - "Users::OmniauthCallbacksController"
-
-UncommunicativeMethodName:
-  exclude:
-    - "Users::OmniauthCallbacksController#google_oauth2"
-
-ControlParameter:
-  exclude:
-    - "Users::RegistrationsController#oauth_provider_humanized"
+    - OauthSpecSupport#stub_omniauth
+    - OauthSpecSupport#user_credentials
 
 "app/cells":
   ControlParameter:
     enabled: false
+
+UtilityFunction:
+  public_methods_only: true

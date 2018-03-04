@@ -32,7 +32,7 @@
 en:
   errors:
     edit_oauth_profile:
-      "Can't edit your profile, 
+      "Can't edit your profile,
       since it is linked to
       %{provider}. You will have
       to change your info there."
