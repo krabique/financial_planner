@@ -14,6 +14,7 @@ Style/MixinUsage:
   Exclude:
     - bin/setup
     - bin/update
+    - bin/test
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
@@ -51,7 +52,3 @@ RSpec/ContextWording:
 RSpec/ExampleLength:
   Exclude:
     - spec/feature/**/*
-
-Style/GuardClause:
-  Exclude:
-    - app/controllers/users/registrations_controller.rb

@@ -38,7 +38,7 @@ html
                 = link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link")
             - else
               li.nav-item.active
-                = link_to user_google_oauth2_omniauth_authorize_path, class:  "nav-link" do
+                = link_to user_google_omniauth_authorize_path, class:  "nav-link" do
                   i.fa.fa-google[aria-hidden="true"]
               li.nav-item.active
                 = link_to user_github_omniauth_authorize_path, class:  "nav-link" do
