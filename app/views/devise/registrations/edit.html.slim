@@ -10,7 +10,7 @@ h2
       .form-group
         label
           = f.check_box :remove_avatar
-          | Remove avatar
+            = I18n.t('devise.registrations.remove_avatar')
 
     .form-group
       = f.file_field :avatar
@@ -20,16 +20,16 @@ h2
     = f.input :email, required: true
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       p
-        | Currently waiting confirmation for:
+        = I18n.t('devise.registrations.currently_awaiting_confirmation_for')
         = resource.unconfirmed_email
-    = f.input :password, autocomplete: "off", hint: I18n.t('devise.registrations.password_input_hint'), required: false
+    = f.input :password, autocomplete: "off", hint: I18n.t('devise.registrations.password_edit_input_hint'), required: false
     = f.input :password_confirmation, required: false
     = f.input :current_password, hint: I18n.t('devise.registrations.current_password_input_hint'), required: true
   .form-actions
     = f.button :submit, I18n.t('devise.registrations.update_button')
 h3
-  | Cancel my account
+  = I18n.t('devise.registrations.cancel_my_account')
 p
-  | Unhappy?
-  = link_to I18n.t('devise.registrations.cancel_my_account_link'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+  = I18n.t('devise.registrations.unhappy?')
+  = link_to I18n.t('devise.registrations.cancel_my_account_link'), registration_path(resource_name), data: { confirm: I18n.t('devise.registrations.are_you_sure?') }, method: :delete
 = link_to I18n.t('devise.registrations.back_link'), :back
