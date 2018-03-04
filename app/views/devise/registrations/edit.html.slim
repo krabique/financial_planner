@@ -26,10 +26,12 @@ h2
     = f.input :password_confirmation, required: false
     = f.input :current_password, hint: I18n.t('devise.registrations.current_password_input_hint'), required: true
   .form-actions
-    = f.button :submit, I18n.t('devise.registrations.update_button')
+    = f.button :submit, I18n.t('devise.registrations.update_button'), class: 'btn btn-primary'
+hr
 h3
   = I18n.t('devise.registrations.cancel_my_account')
 p
   = I18n.t('devise.registrations.unhappy?')
+  br
   = link_to I18n.t('devise.registrations.cancel_my_account_link'), registration_path(resource_name), data: { confirm: I18n.t('devise.registrations.are_you_sure?') }, method: :delete
 = link_to I18n.t('devise.registrations.back_link'), :back
