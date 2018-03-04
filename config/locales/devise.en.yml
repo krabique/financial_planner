@@ -57,6 +57,7 @@ en:
       cancel_my_account: "Cancel my account"
       unhappy?: 'Unhappy?'
       are_you_sure?: "are you sure?"
+      edit_profile: 'Edit profile'
 
     sessions:
       signed_in: "Signed in successfully."

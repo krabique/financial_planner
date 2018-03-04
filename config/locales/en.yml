@@ -41,7 +41,13 @@ en:
       user with that email. If it is you, please, log in with your email,
       or the provider that you have signed up with instead.'
   navbar:
+    title: 'Financial Tracker'
     logout: 'Logout'
     login: 'Log in'
     signup: 'Register'
     hi_username: "Hi, %{name}"
+  title: 'Plan that Finance, baby'
+  home:
+    index:
+      welcome_back: "Welcome back, %{name}!"
+      please_log_in: 'Please, log in or sign up to access the financial tracker.'
