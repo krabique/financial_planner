@@ -12,10 +12,11 @@ class OauthService
 
   private
 
-  attr_reader :auth
+  def user_credentials
+    @user_credentials ||= oauth_user_credentials
+  end
 
   def create_or_update_user
-    user_credentials = oauth_user_credentials
     user = User.where(provider: auth.provider, uid: auth.uid)
                .first_or_create(user_credentials)
     user.update!(user_credentials)
