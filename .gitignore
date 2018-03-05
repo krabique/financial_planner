@@ -32,3 +32,5 @@ test_results/**/*
 .editorconfig
 
 .DS_Store
+
+.idea
