@@ -12,6 +12,8 @@ class OauthService
 
   private
 
+  attr_accessor :auth
+
   def user_credentials
     @user_credentials ||= oauth_user_credentials
   end
