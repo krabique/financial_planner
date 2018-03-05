@@ -6,11 +6,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authorize_account_edit, only: %i[edit update]
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys:
+      %i[name avatar avatar_cache remove_avatar])
   end
 
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys:
+      %i[name avatar avatar_cache remove_avatar])
   end
 
   # The path used after sign up.

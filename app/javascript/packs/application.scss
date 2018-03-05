@@ -6,3 +6,19 @@
     height: 1.7rem;
     width: 1.7rem;
 }
+
+.avatar {
+    border-radius: 50%;
+}
+
+.avatar-thumb {
+    @extend .avatar;
+    height: 1.7rem;
+    width: 1.7rem;
+}
+
+.avatar-profile {
+    @extend .avatar;
+    height: 7rem;
+    width: 7rem;
+}
