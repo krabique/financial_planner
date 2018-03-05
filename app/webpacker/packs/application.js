@@ -9,17 +9,15 @@
 
 console.log('Hello World from Webpacker');
 
-require.context('../stylesheets/', true, /^\.\/[^_].*\.(css|scss|sass)$/i)
+import $ from 'jquery';
+global.$ = $;
+global.jQuery = $;
 
-import $ from 'jquery'
-global.$ = $
-global.jQuery = $
+import 'bootstrap';
 
-import 'bootstrap'
-
-import Rails from 'rails-ujs'
-Rails.start()
+import Rails from 'rails-ujs';
+Rails.start();
 global.Rails = Rails;
 
-import Turbolinks from 'turbolinks'
-Turbolinks.start()
+import Turbolinks from 'turbolinks';
+Turbolinks.start();

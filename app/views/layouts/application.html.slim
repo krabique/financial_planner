@@ -4,12 +4,10 @@ html
     title
       = I18n.t('title')
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application'
-    = stylesheet_pack_tag 'bootstrap'
-    = stylesheet_pack_tag 'application'
-    = stylesheet_pack_tag 'font-awesome'
+
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'stylesheets'
+
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
   body
     = cell(NavbarCell).call
