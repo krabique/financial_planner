@@ -2,10 +2,6 @@
 
 # This is a service that handles oauth for users
 class OauthService
-  def self.process_user(auth)
-    new(auth).process_user
-  end
-
   def initialize(auth)
     @auth = auth
   end

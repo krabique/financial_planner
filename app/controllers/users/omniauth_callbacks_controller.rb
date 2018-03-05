@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def user
-    @user ||= OauthService.process_user(request.env['omniauth.auth'])
+    @user ||= OauthService.new(request.env['omniauth.auth']).process_user
   end
 
   def handle_oauth
