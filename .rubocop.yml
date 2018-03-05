@@ -1,52 +1,210 @@
-require: rubocop-rspec
-
 AllCops:
-  TargetRubyVersion: 2.5
   Exclude:
-    - db/schema.rb
-    - vendor/**/*
-    - node_modules/**/*
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'public/**/*'
+    - 'log/**/*'
+    - 'config/initializers/devise.rb'
+    - 'db/migrate/**/*'
+    # - 'bin/**/*'
+  TargetRubyVersion: 2.5
 
-Style/Documentation:
-  Enabled: false
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/OrderedGems:
+  TreatCommentsAsGroupSeparators: true
 
 Style/MixinUsage:
   Exclude:
     - bin/**/*
 
-Style/EmptyMethod:
-  EnforcedStyle: expanded
+Layout/AccessModifierIndentation:
+  EnforcedStyle: indent
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/BlockEndNewline:
+  Enabled: true
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: false
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/DotPosition:
+  EnforcedStyle: leading
+
+Layout/EmptyLineAfterMagicComment:
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: false
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+  Exclude:
+    - 'config/routes/**/*'
+    - 'db/schema.rb'
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Enabled: true
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EndOfLine:
+  Enabled: true
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+  ForceEqualSignAlignment: false
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: special_for_inner_method_call_in_parentheses
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+  Exclude:
+    - 'config/env.custom.rb'
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: space
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
+Layout/Tab:
+  Enabled: true
+
+Layout/TrailingBlankLines:
+  EnforcedStyle: final_newline
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Lint/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Metrics/AbcSize:
+  Max: 18
+
+MethodLength:
+  Max: 10
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 105
+  Exclude:
+    - 'Gemfile'
+
+ModuleLength:
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+
+Rails:
+  Enabled: true
+
+Rails/Date:
+  EnforcedStyle: flexible
+
+Rails/TimeZone:
+  EnforcedStyle: flexible
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
   Exclude:
-    - config/application.rb
+    - 'config/application.rb'
 
-Metrics/LineLength:
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
+
+Style/RedundantReturn:
+  AllowMultipleReturnValues: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  ConsistentQuotesInMultiline: true
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/GuardClause:
   Exclude:
-    - config/initializers/**/*
-    - db/**/*
+    - 'app/controllers/users/registrations_controller.rb'
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - 'app/controllers/users/**/*'
 
 Metrics/BlockLength:
   Exclude:
-    - config/initializers/**/*
+    - 'config/initializers/simple_form_bootstrap.rb'
 
-Metrics/MethodLength:
+Style/MixinUsage:
   Exclude:
-    - db/**/*
-
-Metrics/AbcSize:
-  Exclude:
-    - db/**/*
-
-RSpec/ImplicitExpect:
-  Exclude:
-    - spec/models/**/*
-
-RSpec/ContextWording:
-  Exclude:
-    - spec/models/**/*
-
-RSpec/ExampleLength:
-  Exclude:
+    - 'bin/**/*'
     - spec/feature/**/*

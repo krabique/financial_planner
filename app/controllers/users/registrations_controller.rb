@@ -32,9 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def provider
-    current_user.provider
-  end
+  delegate :provider, to: :current_user
 
   def authorize_account_edit
     reject_oauth_editing if provider
