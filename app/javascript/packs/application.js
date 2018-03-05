@@ -9,4 +9,17 @@
 
 console.log('Hello World from Webpacker');
 
-import 'bootstrap/dist/js/bootstrap';
+require.context('../stylesheets/', true, /^\.\/[^_].*\.(css|scss|sass)$/i)
+
+import $ from 'jquery'
+global.$ = $
+global.jQuery = $
+
+import 'bootstrap'
+
+import Rails from 'rails-ujs'
+Rails.start()
+global.Rails = Rails;
+
+import Turbolinks from 'turbolinks'
+Turbolinks.start()
