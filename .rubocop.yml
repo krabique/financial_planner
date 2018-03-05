@@ -12,9 +12,7 @@ Style/Documentation:
 
 Style/MixinUsage:
   Exclude:
-    - bin/setup
-    - bin/update
-    - bin/test
+    - bin/**/*
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
