@@ -31,3 +31,11 @@
 exclude_paths:
   - vendor
   - db
+
+DuplicateMethodCall:
+  exclude:
+    - OauthSpecSupport#stub_omniauth
+    - OauthSpecSupport#user_credentials
+
+UtilityFunction:
+  public_methods_only: true

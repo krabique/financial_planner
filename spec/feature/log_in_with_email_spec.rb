@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'SignUpsAndLogIns', type: :feature do
+RSpec.describe 'LogInWithEmail', type: :feature do
   let(:user) { create(:user) }
 
   it 'lets a visitor log in' do
