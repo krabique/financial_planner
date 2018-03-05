@@ -1,4 +1,6 @@
 - if current_user
-  p.text-center Welcome back, #{current_user.name}!
+  p.text-center
+    = I18n.t('home.index.welcome_back', name: current_user.name)
 - else
-  p.text-center Please, log in or sign up to access the financial tracker.
+  p.text-center
+    = I18n.t('home.index.please_log_in')

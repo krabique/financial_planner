@@ -1,0 +1,26 @@
+nav.navbar.navbar-expand-md.navbar-dark.bg-danger
+  .container
+    = link_to(I18n.t('navbar.title'), root_path, class:  "navbar-brand")
+    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    #navbar.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+      ul.navbar-nav
+        - if user_signed_in?
+          - if current_user.provider
+            = current_user_link(root_path)
+          - else
+            = current_user_link(edit_user_registration_path)
+          li.nav-item.active
+            = link_to(I18n.t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link")
+        - else
+          li.nav-item.active
+            = link_to user_google_omniauth_authorize_path, class: "nav-link" do
+              i.fa.fa-google[aria-hidden="true"]
+          li.nav-item.active
+            = link_to user_github_omniauth_authorize_path, class: "nav-link" do
+              i.fa.fa-github[aria-hidden="true"]
+          li.nav-item.active
+            = link_to(I18n.t('navbar.login'), new_user_session_path, class: "nav-link")
+          li.nav-item.active
+            = link_to(I18n.t('navbar.signup'), new_user_registration_path, class: "nav-link")

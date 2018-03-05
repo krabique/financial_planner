@@ -46,10 +46,19 @@ en:
       updated: "Your account has been updated successfully."
 
       current_password_input_hint: 'we need your current password to confirm your changes'
-      password_input_hint: "leave it blank if you don't want to change it"
+      password_edit_input_hint: "leave it blank if you don't want to change it"
+      password_new_input_hint: "%{minimum_password_length} characters minimum"
       back_link: 'Back'
       update_button: 'Update'
       cancel_my_account_link: 'Cancel my account'
+      sign_up: 'Sign up'
+      remove_avatar: 'Remove avatar'
+      currently_awaiting_confirmation_for: 'Currently waiting confirmation for:'
+      cancel_my_account: "Cancel my account"
+      unhappy?: 'Unhappy?'
+      are_you_sure?: "are you sure?"
+      edit_profile: 'Edit profile'
+
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
