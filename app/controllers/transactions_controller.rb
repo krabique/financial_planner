@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TransactionsController < ApplicationController
   # before_action :set_transaction, only: %i[edit update destroy]
 
@@ -38,7 +40,6 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     params.require(:transaction)
-      .permit(:amount, :kind, :comment, :user_id, :date)
+          .permit(:amount, :kind, :comment, :user_id, :date)
   end
-
 end

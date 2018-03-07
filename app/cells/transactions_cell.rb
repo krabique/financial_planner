@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This cell is used for transactions
 class TransactionsCell < Cell::ViewModel
   include ActionView::RecordIdentifier
   include ActionView::Helpers::FormHelper
