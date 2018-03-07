@@ -1,6 +1,8 @@
 - if current_user
   p.text-center
     = I18n.t('home.index.welcome_back', name: current_user.name)
+    div.new_transaction_form
+      = cell(:transactions).(:new, @transaction)
 - else
   p.text-center
     = I18n.t('home.index.please_log_in')
