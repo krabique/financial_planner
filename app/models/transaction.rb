@@ -12,7 +12,7 @@ class Transaction < ApplicationRecord
     in: %w[income expense],
     message: "Transaction's kind must be either income or expense"
   }
-  validates :comment, presence: true, length: {maximum: 80}
+  validates :comment, length: {maximum: 80}
   validates :user, presence: true
   validates :date, presence: true
 end
