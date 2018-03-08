@@ -2,8 +2,6 @@
 
 # This cell is used for transactions
 class TransactionsCell < Cell::ViewModel
-  include ActionView::RecordIdentifier
-  include ActionView::Helpers::FormHelper
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::FormOptionsHelper
   include SimpleForm::ActionViewExtensions::FormHelper
@@ -12,6 +10,12 @@ class TransactionsCell < Cell::ViewModel
 
   def new(transaction)
     @transaction = transaction
+    render
+  end
+
+  def last(quantity)
+    @transactions = current_user.transactions.order(id: :desc).limit(quantity)
+    @quantity = quantity
     render
   end
 end
