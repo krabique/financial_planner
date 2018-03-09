@@ -2,7 +2,6 @@
   = f.error_notification
   .form-inputs
     = f.input :amount
-    = f.input :kind, collection: %w[income expense]
     = f.input :comment
     = f.input :date, discard_hour: true
   .form-actions
