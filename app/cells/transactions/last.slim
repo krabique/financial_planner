@@ -1,14 +1,14 @@
 h3.text-center
-  | Your last #{@quantity} transactions
+  = I18n.t('transactions.your_last_transactions', quantity: @quantity)
 table.table.table-striped
   thead
     tr
       th[scope="col"]
-        | Amount
+        = I18n.t('transactions.amount')
       th[scope="col"]
-        | Comment
+        = I18n.t('transactions.comment')
       th[scope="col"]
-        | Date
+        = I18n.t('transactions.date')
   tbody
     - @transactions.each do |t|
       tr

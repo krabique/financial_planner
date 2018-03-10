@@ -51,3 +51,9 @@ en:
     index:
       welcome_back: "Welcome back, %{name}!"
       please_log_in: 'Please, log in or sign up to access the financial tracker.'
+  transactions:
+    your_last_transactions: 'Your last %{quantity} transactions'
+    amount: 'Amount'
+    comment: 'Comment'
+    date: 'Date'
+    transaction_created: 'Transaction was successfully created.'

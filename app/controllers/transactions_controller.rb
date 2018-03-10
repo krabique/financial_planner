@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.new(transaction_params)
 
     if @transaction.save
-      redirect_to root_path, notice: 'transaction was successfully created.'
+      redirect_to root_path, notice: I18n.t('transactions.transaction_created')
     else
       render 'home/index'
     end
