@@ -12,4 +12,8 @@ class TransactionsCell < ApplicationCell
     @quantity = quantity
     render
   end
+
+  def item
+    render
+  end
 end
