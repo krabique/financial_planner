@@ -6,9 +6,8 @@ class TransactionsCell < ApplicationCell
     render
   end
 
-  def last(quantity)
-    @transactions = current_user.transactions.order(id: :desc).limit(quantity)
-    @quantity = quantity
+  def list(transactions)
+    @transactions = transactions
     render
   end
 

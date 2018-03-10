@@ -11,4 +11,6 @@ class Transaction < ApplicationRecord
   validates :comment, length: {maximum: 80}
   validates :user, presence: true
   validates :date, presence: true
+
+  scope :last_ten, ->(user) { where(user: user).order(id: :desc).limit(10) }
 end

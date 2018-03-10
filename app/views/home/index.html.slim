@@ -4,7 +4,7 @@
     div.new_transaction_form
       = cell(:transactions, @transaction).(:form)
       hr
-      = cell(:transactions).(:last, 10)
+      = cell(:transactions).(:list, @transactions)
 - else
   p.text-center
     = I18n.t('home.index.please_log_in')
