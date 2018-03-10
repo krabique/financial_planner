@@ -2,7 +2,7 @@
   p.text-center
     = I18n.t('home.index.welcome_back', name: current_user.name)
     div.new_transaction_form
-      = cell(:transactions).(:form, @transaction)
+      = cell(:transactions, @transaction).(:form)
       hr
       = cell(:transactions).(:last, 10)
 - else
