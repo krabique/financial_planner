@@ -1,12 +1,7 @@
 # frozen_string_literal: true
 
 # This cell is used for transactions
-class TransactionsCell < Cell::ViewModel
-  include ActionView::Helpers::DateHelper
-  include ActionView::Helpers::FormOptionsHelper
-  include SimpleForm::ActionViewExtensions::FormHelper
-  include SimpleForm::Inputs
-  include Devise::Controllers::Helpers
+class TransactionsCell < ApplicationCell
 
   def new(transaction)
     @transaction = transaction
