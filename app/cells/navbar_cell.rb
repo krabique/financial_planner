@@ -2,7 +2,6 @@
 
 # The navbar cell
 class NavbarCell < ApplicationCell
-
   def show
     render
   end

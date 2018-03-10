@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# A cell with common included modules, is a parent class for most other cells
 class ApplicationCell < Cell::ViewModel
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::FormOptionsHelper
