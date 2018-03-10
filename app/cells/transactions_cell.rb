@@ -2,7 +2,7 @@
 
 # This cell is used for transactions
 class TransactionsCell < ApplicationCell
-  def new(transaction)
+  def form(transaction)
     @transaction = transaction
     render
   end
