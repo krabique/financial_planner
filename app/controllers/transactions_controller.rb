@@ -8,9 +8,14 @@ class TransactionsController < ApplicationController
       .order(created_at: :desc).page(params[:page]).per(5)
   end
 
-  # def new
-  #   @transaction = current_user.entries.new
-  # end
+  def new
+    @transaction = current_user.transactions.new
+
+    respond_to do |format|
+      format.html
+      format.js { render :form }
+    end
+  end
 
   # def edit; end
 
@@ -18,7 +23,8 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.new(transaction_params)
 
     if @transaction.save
-      redirect_to root_path, notice: I18n.t('transactions.transaction_created')
+      redirect_back fallback_location: root_path,
+                    notice: I18n.t('transactions.transaction_created')
     else
       @transactions = Transaction.last_ten(current_user)
       render 'home/index'

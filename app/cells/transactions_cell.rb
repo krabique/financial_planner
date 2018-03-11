@@ -14,4 +14,8 @@ class TransactionsCell < ApplicationCell
   def item
     render
   end
+
+  def modal
+    render
+  end
 end

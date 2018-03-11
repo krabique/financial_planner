@@ -1,4 +1,7 @@
 h3.text-center
   = I18n.t('transactions.all_transactions')
+= link_to 'Add transaction', new_transaction_path,  {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}
 = cell(:transactions).(:list, @transactions)
 = paginate @transactions
+
+#modal-window.modal[tabindex="-1" role="dialog"].hide.fade[role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"]
