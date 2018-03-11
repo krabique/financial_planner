@@ -3,6 +3,10 @@
 class TransactionsController < ApplicationController
   # before_action :set_transaction, only: %i[edit update destroy]
 
+  def index
+    @transactions = current_user.transactions
+  end
+
   # def new
   #   @transaction = current_user.entries.new
   # end
