@@ -37,10 +37,10 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @transaction.destroy
-  #   redirect_to root_path, notice: 'transaction was successfully destroyed.'
-  # end
+  def destroy
+    @transaction.destroy
+    redirect_to root_path, notice: I18n.t('transactions.transaction_destroyed')
+  end
 
   private
 
