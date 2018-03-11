@@ -4,8 +4,8 @@ class TransactionsController < ApplicationController
   # before_action :set_transaction, only: %i[edit update destroy]
 
   def index
-    @transactions = current_user.transactions.order(created_at: :desc).page(params[:page]).per(5)
-    # @transaction = Transaction.paginate(:page => params[:page], :per_page => 5).where(user: current_user)
+    @transactions = current_user.transactions
+      .order(created_at: :desc).page(params[:page]).per(5)
   end
 
   # def new
@@ -20,6 +20,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to root_path, notice: I18n.t('transactions.transaction_created')
     else
+      @transactions = Transaction.last_ten(current_user)
       render 'home/index'
     end
   end
