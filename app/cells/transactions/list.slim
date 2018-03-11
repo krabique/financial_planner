@@ -1,5 +1,5 @@
 h3.text-center
-  = I18n.t('transactions.your_last_transactions', quantity: @quantity)
+  = I18n.t('transactions.your_last_transactions', quantity: @transactions.count)
 table.table.table-striped
   thead
     tr
