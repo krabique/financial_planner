@@ -24,16 +24,16 @@ class TransactionsController < ApplicationController
       redirect_back fallback_location: root_path,
                     notice: I18n.t('transactions.transaction_created')
     else
-      @transactions = Transaction.last_ten(current_user)
-      render 'home/index'
+      render :form
     end
   end
 
   def update
     if @transaction.update(transaction_params)
-      redirect_to root_path, notice: I18n.t('transactions.transaction_updated')
+      redirect_back fallback_location: root_path,
+                    notice: I18n.t('transactions.transaction_updated')
     else
-      render :edit
+      render :form
     end
   end
 
