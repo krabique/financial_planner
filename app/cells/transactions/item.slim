@@ -6,8 +6,8 @@ tr
   td
     = model.date.strftime("%Y-%m-%d")
   td[align="right"]
-    = link_to edit_transaction_path(model) do
+    = link_to(edit_transaction_path(model), remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
       i.fa.fa-pencil[aria-hidden="true"]
     '
-    = link_to model, method: :delete do
+    = link_to(model, method: :delete, remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
       i.fa.fa-times[aria-hidden="true"]

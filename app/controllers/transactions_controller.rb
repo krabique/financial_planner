@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TransactionsController < ApplicationController
-  # before_action :set_transaction, only: %i[edit update destroy]
+  before_action :set_transaction, only: %i[edit update destroy]
 
   def index
     @transactions = current_user.transactions
@@ -10,14 +10,12 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = current_user.transactions.new
-
-    respond_to do |format|
-      format.html
-      format.js { render :form }
-    end
+    render :form
   end
 
-  # def edit; end
+  def edit
+    render :form
+  end
 
   def create
     @transaction = current_user.transactions.new(transaction_params)
@@ -31,13 +29,13 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @transaction.update(transaction_params)
-  #     redirect_to root_path, notice: 'transaction was successfully updated.'
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    if @transaction.update(transaction_params)
+      redirect_to root_path, notice: I18n.t('transactions.transaction_updated')
+    else
+      render :edit
+    end
+  end
 
   # def destroy
   #   @transaction.destroy
@@ -46,9 +44,9 @@ class TransactionsController < ApplicationController
 
   private
 
-  # def set_transaction
-  #   @transaction = transaction.find(params[:id])
-  # end
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
+  end
 
   def transaction_params
     params.require(:transaction)
