@@ -62,4 +62,4 @@ en:
     transaction_updated: 'Transaction was successfully updated.'
     transaction_destroyed: 'Transaction was successfully destroyed.'
     all_transactions: 'All transactions'
-
+    add_transaction: 'Add transaction'

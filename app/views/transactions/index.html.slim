@@ -3,6 +3,6 @@ h3.text-center
 = link_to(new_transaction_path, remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
   i.fa.fa-plus-circle[aria-hidden="true"]
   '
-  | Add transaction
+  = I18n.t('transactions.add_transaction')
 = cell(:transactions).(:list, @transactions)
 = paginate @transactions
