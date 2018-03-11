@@ -8,6 +8,6 @@ table.table.table-striped
       th[scope="col"]
         = I18n.t('transactions.date')
       th[scope="col"]
-        | Actions
+        '
   tbody
     = cell(:transactions, collection: @transactions).(:item)
