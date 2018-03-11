@@ -4,7 +4,8 @@ class TransactionsController < ApplicationController
   # before_action :set_transaction, only: %i[edit update destroy]
 
   def index
-    @transactions = current_user.transactions
+    @transactions = current_user.transactions.order(created_at: :desc).page(params[:page]).per(5)
+    # @transaction = Transaction.paginate(:page => params[:page], :per_page => 5).where(user: current_user)
   end
 
   # def new

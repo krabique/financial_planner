@@ -1,3 +1,4 @@
 h3.text-center
   = I18n.t('transactions.all_transactions')
 = cell(:transactions).(:list, @transactions)
+= paginate @transactions
