@@ -211,3 +211,6 @@ Style/MixinUsage:
   Exclude:
     - 'bin/**/*'
     - spec/feature/**/*
+
+Lint/RequireParentheses:
+  Enabled: true
