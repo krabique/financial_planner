@@ -2,8 +2,9 @@
 
 # The navbar cell
 class NavbarCell < ApplicationCell
-  def show(balance = nil)
-    @balance = balance
+  def show
+    @balance = Transaction.where(user: current_user).sum(:amount_cents)
+      .to_money / 100
     render
   end
 
