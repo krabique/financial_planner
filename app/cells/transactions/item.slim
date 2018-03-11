@@ -5,3 +5,9 @@ tr
     = model.comment
   td
     = model.date.strftime("%Y-%m-%d")
+  td[align="right"]
+    = link_to edit_transaction_path(model) do
+      i.fa.fa-pencil[aria-hidden="true"]
+    '
+    = link_to model, method: :delete do
+      i.fa.fa-times[aria-hidden="true"]

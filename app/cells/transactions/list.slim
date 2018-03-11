@@ -7,5 +7,7 @@ table.table.table-striped
         = I18n.t('transactions.comment')
       th[scope="col"]
         = I18n.t('transactions.date')
+      th[scope="col"]
+        | Actions
   tbody
     = cell(:transactions, collection: @transactions).(:item)
