@@ -2,7 +2,8 @@
 
 # The navbar cell
 class NavbarCell < ApplicationCell
-  def show
+  def show(balance = nil)
+    @balance = balance
     render
   end
 

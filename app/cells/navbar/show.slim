@@ -7,6 +7,9 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-danger
       ul.navbar-nav.mr-auto
       ul.navbar-nav
         - if user_signed_in?
+          li.nav-item.active.nav-link
+            = @balance.symbol
+            = @balance
           - if current_user.provider
             = current_user_link(root_path)
           - else
