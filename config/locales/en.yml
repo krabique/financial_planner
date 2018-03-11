@@ -57,3 +57,4 @@ en:
     comment: 'Comment'
     date: 'Date'
     transaction_created: 'Transaction was successfully created.'
+    all_transactions: 'All transactions'
