@@ -9,16 +9,17 @@ h3.text-center
       = f.label :date_lteq
       = f.datetime_field :date_lteq, class: 'form-control', type: 'date', value: (params[:q][:date_lteq] if params[:q])
   .form-actions
-    = f.submit 'Search', class: 'btn btn-primary'
+    = f.submit I18n.t('transactions.search'), class: 'btn btn-primary'
     '
-    = link_to 'Clear Filters', transactions_path, class: 'btn btn-secondary'
+    = link_to I18n.t('transactions.clear_filters'), transactions_path, class: 'btn btn-secondary'
 hr
 = link_to(new_transaction_path, remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
   i.fa.fa-plus-circle[aria-hidden="true"]
   '
   = I18n.t('transactions.add_transaction')
 - if @transactions.empty?
-  h4.text-center No transactions!
+  h4.text-center
+    = I18n.t('transactions.no_transactions')
 - else
   = cell(:transactions).(:list, @transactions)
 = paginate @transactions
