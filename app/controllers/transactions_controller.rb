@@ -4,8 +4,8 @@ class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[edit update destroy]
 
   def index
-    @transactions = current_user.transactions
-      .order(created_at: :desc).page(params[:page]).per(5)
+    @search_query = current_user.transactions.order(created_at: :desc).ransack(params[:q])
+    @transactions = @search_query.result.page(params[:page]).per(5)
   end
 
   def new

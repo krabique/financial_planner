@@ -1,8 +1,24 @@
 h3.text-center
   = I18n.t('transactions.all_transactions')
+= search_form_for @search_query, class: 'simple_form' do |f|
+  .form-inputs
+    .form-group
+      = f.label :date_gteq
+      = f.datetime_field :date_gteq, class: 'form-control', type: 'date', value: (params[:q][:date_gteq] if params[:q])
+    .form-group
+      = f.label :date_lteq
+      = f.datetime_field :date_lteq, class: 'form-control', type: 'date', value: (params[:q][:date_lteq] if params[:q])
+  .form-actions
+    = f.submit 'Search', class: 'btn btn-primary'
+    '
+    = link_to 'Clear Filters', transactions_path, class: 'btn btn-secondary'
+hr
 = link_to(new_transaction_path, remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
   i.fa.fa-plus-circle[aria-hidden="true"]
   '
   = I18n.t('transactions.add_transaction')
-= cell(:transactions).(:list, @transactions)
+- if @transactions.empty?
+  h4.text-center No transactions!
+- else
+  = cell(:transactions).(:list, @transactions)
 = paginate @transactions
