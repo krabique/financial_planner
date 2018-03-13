@@ -12,5 +12,5 @@ class Transaction < ApplicationRecord
   validates :user, presence: true
   validates :date, presence: true
 
-  scope :last_ten, ->(user) { where(user: user).order(id: :desc).limit(10) }
+  scope :last_ten, -> { order(id: :desc).limit(10) }
 end
