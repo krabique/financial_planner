@@ -46,6 +46,7 @@ en:
     logout: 'Logout'
     login: 'Log in'
     signup: 'Register'
+    all_transactions: 'All transactions'
     hi_username: "Hi, %{name}"
   title: 'Plan that Finance, baby'
   home:
