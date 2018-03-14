@@ -1,12 +1,8 @@
-- if current_user
-  p.text-center
-    = I18n.t('home.index.welcome_back', name: current_user.name)
-    div#home_new_transaction_form
-      = cell(:transactions, @transaction).(:form, controller.controller_name)
+p.text-center
+  = I18n.t('home.index.welcome_back', name: current_user.name)
+  div.new_transaction_form
+    = cell(:transactions, @transaction).(:form)
     hr
     h3.text-center
       = I18n.t('transactions.your_last_transactions', quantity: @transactions.count)
     = cell(:transactions).(:list, @transactions)
-- else
-  p.text-center
-    = I18n.t('home.index.please_log_in')

@@ -382,6 +382,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails-controller-testing
   ransack!
+  rails-controller-testing
   reek
   rspec-rails (~> 3.7)
   rspec_junit_formatter
