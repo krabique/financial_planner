@@ -5,8 +5,9 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-danger
       span.navbar-toggler-icon
     #navbar.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
-        li.nav-item.active
-          = link_to I18n.t('navbar.all_transactions'), transactions_path, class: 'nav-link'
+        - if user_signed_in?
+          li.nav-item.active
+            = link_to I18n.t('navbar.all_transactions'), transactions_path, class: 'nav-link'
       ul.navbar-nav
         - if user_signed_in?
           li.nav-item.active.nav-link
