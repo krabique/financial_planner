@@ -1,0 +1,13 @@
+h3.text-center
+  = I18n.t('transactions.your_last_transactions', quantity: @transactions.count)
+table.table.table-striped
+  thead
+    tr
+      th[scope="col"]
+        = I18n.t('transactions.amount')
+      th[scope="col"]
+        = I18n.t('transactions.comment')
+      th[scope="col"]
+        = I18n.t('transactions.date')
+  tbody
+    = cell(:transactions, collection: @transactions).(:item)

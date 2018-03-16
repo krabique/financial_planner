@@ -20,7 +20,7 @@ class OauthService
 
   def create_or_update_user
     user = User.where(provider: auth.provider, uid: auth.uid)
-               .first_or_create(user_credentials)
+      .first_or_create(user_credentials)
     user.update!(user_credentials)
     user
   end

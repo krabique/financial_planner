@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 # The navbar cell
-class NavbarCell < Cell::ViewModel
-  include Devise::Controllers::Helpers
-
+class NavbarCell < ApplicationCell
   def show
     render
   end

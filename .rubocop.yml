@@ -120,6 +120,9 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
 Lint/EndAlignment:
   EnforcedStyleAlignWith: variable
 
