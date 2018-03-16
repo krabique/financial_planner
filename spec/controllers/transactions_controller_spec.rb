@@ -9,6 +9,33 @@ RSpec.describe TransactionsController, type: :controller do
     sign_in user
   end
 
+  describe 'GET #index' do
+    let(:transaction_one_day_ago) { create(:transaction, :one_day_ago, user: user) }
+    let(:transaction_two_days_ago) { create(:transaction, :two_days_ago, user: user) }
+
+    before do
+      transaction_one_day_ago
+      transaction_two_days_ago
+    end
+
+    it 'filters transactions up to now' do
+      get :index, params: {q: {date_lteq: Time.current}}
+      expect(assigns(:transactions).to_a).to eq Transaction.all.order(created_at: :desc).to_a
+    end
+
+    it 'filters transactions to two days ago' do
+      get :index, params:
+        {
+          q:
+          {
+            date_qteq: transaction_one_day_ago.date.strftime('%Y-%m-%d'),
+            date_lteq: transaction_one_day_ago.date.strftime('%Y-%m-%d')
+          }
+        }
+      expect(assigns(:transactions).to_a).to eq [transaction_two_days_ago]
+    end
+  end
+
   describe 'GET #new' do
     it 'renders the :form template' do
       get :new, format: :js, xhr: true

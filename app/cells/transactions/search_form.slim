@@ -1,0 +1,12 @@
+= search_form_for @search_query, class: 'simple_form' do |f|
+  .form-inputs
+    .form-group
+      = f.label :date_gteq
+      = f.datetime_field :date_gteq, class: 'form-control', type: 'date', value: (params[:q][:date_gteq] if params[:q])
+    .form-group
+      = f.label :date_lteq
+      = f.datetime_field :date_lteq, class: 'form-control', type: 'date', value: (params[:q][:date_lteq] if params[:q])
+  .form-actions
+    = f.submit I18n.t('transactions.search'), class: 'btn btn-primary'
+    '
+    = link_to I18n.t('transactions.clear_filters'), transactions_path, class: 'btn btn-secondary'

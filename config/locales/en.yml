@@ -64,3 +64,6 @@ en:
     transaction_destroyed: 'Transaction was successfully destroyed.'
     all_transactions: 'All transactions'
     add_transaction: 'Add transaction'
+    search: 'Search'
+    clear_filters: 'Clear filters'
+    no_transactions: 'No transactions!'

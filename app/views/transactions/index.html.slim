@@ -1,8 +1,14 @@
 h3.text-center
   = I18n.t('transactions.all_transactions')
+= cell(:transactions).(:search_form, @search_query)
+hr
 = link_to(new_transaction_path, remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
   i.fa.fa-plus-circle[aria-hidden="true"]
   '
   = I18n.t('transactions.add_transaction')
-= cell(:transactions).(:list, @transactions)
+- if @transactions.empty?
+  h4.text-center
+    = I18n.t('transactions.no_transactions')
+- else
+  = cell(:transactions).(:list, @transactions)
 = paginate @transactions
