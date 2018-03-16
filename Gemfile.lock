@@ -209,6 +209,8 @@ GEM
     powerpack (0.1.1)
     public_suffix (3.0.2)
     puma (3.11.2)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.4)
     rack-proxy (0.6.3)
       rack
@@ -376,7 +378,9 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg (~> 0.18)
   puma (~> 3.7)
+  pundit
   rails (~> 5.1.4)
+  rails-controller-testing
   ransack!
   rails-controller-testing
   reek

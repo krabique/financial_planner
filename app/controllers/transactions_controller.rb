@@ -46,6 +46,7 @@ class TransactionsController < ApplicationController
 
   def set_transaction
     @transaction = Transaction.find(params[:id])
+    authorize @transaction
   end
 
   def transaction_params

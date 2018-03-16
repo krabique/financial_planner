@@ -140,22 +140,22 @@ RSpec.describe TransactionsController, type: :controller do
       end
     end
 
-    # context "when user is trying to update someone else's transaction" do
-    #   it 'should not update the transaction' do
-    #     other_user_transaction = create(:transaction, user: create(:user))
+    context "when user is trying to update someone else's transaction" do
+      it 'should not update the transaction' do
+        other_user_transaction = create(:transaction, user: create(:user))
 
-    #     initial_comment = other_user_transaction.comment
+        initial_comment = other_user_transaction.comment
 
-    #     put :update, xhr: true, params: {
-    #       id: other_user_transaction.id,
-    #       transaction: { comment: initial_comment + 'abc' }
-    #     }
+        put :update, xhr: true, params: {
+          id: other_user_transaction.id,
+          transaction: {comment: initial_comment + 'abc'}
+        }
 
-    #     assigns(:transaction).reload
+        assigns(:transaction).reload
 
-    #     expect(assigns(:transaction).comment).to eq initial_comment
-    #   end
-    # end
+        expect(assigns(:transaction).comment).to eq initial_comment
+      end
+    end
   end
 
   describe 'DELETE #destroy' do
@@ -169,21 +169,21 @@ RSpec.describe TransactionsController, type: :controller do
       end
     end
 
-    # context "with other users' transactions" do
-    #   let!(:user) { create(:user) }
-    #   let(:another_user) { create(:user) }
-    #   let!(:others_transaction) { create(:transaction, user: another_user) }
+    context "with other users' transactions" do
+      let!(:user) { create(:user) }
+      let(:another_user) { create(:user) }
+      let!(:others_transaction) { create(:transaction, user: another_user) }
 
-    #   it 'does not destroy the transaction' do
-    #     expect do
-    #       delete :destroy, params: { id: others_transaction.id }
-    #     end.to_not change(Transaction, :count)
-    #   end
+      it 'does not destroy the transaction' do
+        expect do
+          delete :destroy, params: {id: others_transaction.id}
+        end.to_not change(Transaction, :count)
+      end
 
-    #   it 'redirects to the home page' do
-    #     delete :destroy, params: { id: others_transaction.id }
-    #     expect(response).to redirect_to root_path
-    #   end
-    # end
+      it 'redirects to the home page' do
+        delete :destroy, params: {id: others_transaction.id}
+        expect(response).to redirect_to root_path
+      end
+    end
   end
 end
