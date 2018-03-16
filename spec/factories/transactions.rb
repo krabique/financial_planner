@@ -10,5 +10,13 @@ FactoryBot.define do
     factory :invalid_transaction do
       amount { 'abc' }
     end
+
+    trait :one_day_ago do
+      date { Time.current - 1.day }
+    end
+
+    trait :two_days_ago do
+      date { Time.current - 2.days }
+    end
   end
 end
