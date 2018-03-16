@@ -1,5 +1,3 @@
-h3.text-center
-  = I18n.t('transactions.your_last_transactions', quantity: @transactions.count)
 table.table.table-striped
   thead
     tr
@@ -9,5 +7,7 @@ table.table.table-striped
         = I18n.t('transactions.comment')
       th[scope="col"]
         = I18n.t('transactions.date')
+      th[scope="col"]
+        '
   tbody
     = cell(:transactions, collection: @transactions).(:item)

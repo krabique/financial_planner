@@ -51,6 +51,8 @@ gem 'cells-slim'
 
 gem 'money-rails', '~> 1.10'
 
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
@@ -59,6 +61,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'reek', require: false
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.52.1', require: false

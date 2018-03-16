@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :transactions, only: %i[create]
+  resources :transactions
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

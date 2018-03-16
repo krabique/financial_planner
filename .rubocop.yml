@@ -206,8 +206,12 @@ Rails/LexicallyScopedActionFilter:
 Metrics/BlockLength:
   Exclude:
     - 'config/initializers/simple_form_bootstrap.rb'
+    - spec/**/*
 
 Style/MixinUsage:
   Exclude:
     - 'bin/**/*'
     - spec/feature/**/*
+
+Lint/RequireParentheses:
+  Enabled: true

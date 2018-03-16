@@ -1,8 +1,9 @@
-= simple_form_for(model) do |f|
+= simple_form_for(model, remote: true) do |f|
   = f.error_notification
   .form-inputs
     = f.input :amount
     = f.input :comment
     = f.input :date, discard_hour: true
+    = hidden_field_tag(:controller_name, @controller_name)
   .form-actions
     = f.button :submit, class: 'btn btn-primary'

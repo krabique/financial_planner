@@ -62,6 +62,9 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view
 
   config.include FactoryBot::Syntax::Methods
+
+  require_relative 'support/redirect_back'
+  config.include RedirectBack
 end
 
 require 'capybara/rails'
