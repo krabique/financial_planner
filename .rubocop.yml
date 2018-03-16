@@ -206,6 +206,7 @@ Rails/LexicallyScopedActionFilter:
 Metrics/BlockLength:
   Exclude:
     - 'config/initializers/simple_form_bootstrap.rb'
+    - spec/**/*
 
 Style/MixinUsage:
   Exclude:

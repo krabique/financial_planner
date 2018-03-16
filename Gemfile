@@ -65,6 +65,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'reek', require: false
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.52.1', require: false

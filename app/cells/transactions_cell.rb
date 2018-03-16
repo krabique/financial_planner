@@ -19,4 +19,9 @@ class TransactionsCell < ApplicationCell
   def modal
     render
   end
+
+  def search_form(search_query)
+    @search_query = search_query
+    render
+  end
 end

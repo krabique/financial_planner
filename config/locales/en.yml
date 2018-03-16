@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  not_authorized: 'You are not authorized to perform this action.'
   are_you_sure: 'Are you sure?'
   errors:
     edit_oauth_profile:
@@ -46,6 +47,7 @@ en:
     logout: 'Logout'
     login: 'Log in'
     signup: 'Register'
+    all_transactions: 'All transactions'
     hi_username: "Hi, %{name}"
   title: 'Plan that Finance, baby'
   home:
