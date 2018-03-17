@@ -1,7 +1,7 @@
 = simple_form_for(model, remote: true) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :amount
+    = f.input :amount, as: :decimal
     = f.input :comment
     = f.input :date, discard_hour: true
     = hidden_field_tag(:controller_name, @controller_name)
