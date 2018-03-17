@@ -8,7 +8,8 @@ AllCops:
     - 'log/**/*'
     - 'config/initializers/devise.rb'
     - 'db/migrate/**/*'
-    # - 'bin/**/*'
+    - 'bin/**/*'
+    - 'spec/i18n_spec.rb'
   TargetRubyVersion: 2.5
 
 Bundler/DuplicatedGem:
