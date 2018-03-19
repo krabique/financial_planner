@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # This is a service for user's transactions balance
-class CreateCategotyService
+class CreateCategoryService
   def initialize(parent:, params:)
     @parent = parent
     @params = params

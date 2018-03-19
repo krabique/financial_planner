@@ -1,0 +1,8 @@
+= simple_form_for(model, remote: true) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name
+    = f.input :categorizable, disabled: true, hint: I18n.t('categories.you_cannot_change_the_parent')
+    / = hidden_field_tag(:controller_name, @controller_name)
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'

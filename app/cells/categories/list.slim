@@ -1,0 +1,11 @@
+table.table.table-striped
+  thead
+    tr
+      th[scope="col"]
+        = I18n.t('categories.name')
+      th[scope="col"]
+        = I18n.t('categories.categorizable')
+      th[scope="col"]
+        '
+  tbody
+    = cell(:categories, collection: @categories).(:item)

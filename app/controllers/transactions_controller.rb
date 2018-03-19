@@ -40,7 +40,8 @@ class TransactionsController < ApplicationController
 
   def destroy
     @transaction.destroy
-    redirect_to root_path, notice: I18n.t('transactions.transaction_destroyed')
+    redirect_back fallback_location: root_path,
+                  notice: I18n.t('transactions.transaction_destroyed')
   end
 
   private
