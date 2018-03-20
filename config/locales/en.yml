@@ -1,70 +1,33 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  not_authorized: 'You are not authorized to perform this action.'
-  are_you_sure: 'Are you sure?'
+  are_you_sure: Are you sure?
   errors:
-    edit_oauth_profile:
-      "Can't edit your profile,
-      since it is linked to
-      %{provider}. You will have
-      to change your info there."
-    redirect_when_duplicate_email:
-      'There is already a
-      user with that email. If it is you, please, log in with your email,
-      or the provider that you have signed up with instead.'
-  navbar:
-    title: 'Financial Tracker'
-    logout: 'Logout'
-    login: 'Log in'
-    signup: 'Register'
-    all_transactions: 'All transactions'
-    hi_username: "Hi, %{name}"
-  title: 'Plan that Finance, baby'
+    edit_oauth_profile: Can't edit your profile, since it is linked to %{provider}. You will have to change your info there.
+    redirect_when_duplicate_email: There is already a user with that email. If it is you, please, log in with your email, or the provider that you have signed up with instead.
   home:
     index:
-      welcome_back: "Welcome back, %{name}!"
-      please_log_in: 'Please, log in or sign up to access the financial tracker.'
+      please_log_in: Please, log in or sign up to access the financial tracker.
+      welcome_back: Welcome back, %{name}!
+  navbar:
+    all_transactions: All transactions
+    hi_username: Hi, %{name}
+    login: Log in
+    logout: Logout
+    signup: Register
+    title: Financial Tracker
+  not_authorized: You are not authorized to perform this action.
+  title: Plan that Finance, baby
   transactions:
-    transaction: 'Transaction'
-    your_last_transactions: 'Your last %{quantity} transactions'
-    amount: 'Amount'
-    comment: 'Comment'
-    date: 'Date'
-    transaction_created: 'Transaction was successfully created.'
-    transaction_updated: 'Transaction was successfully updated.'
-    transaction_destroyed: 'Transaction was successfully destroyed.'
-    all_transactions: 'All transactions'
-    add_transaction: 'Add transaction'
-    search: 'Search'
-    clear_filters: 'Clear filters'
-    no_transactions: 'No transactions!'
+    add_transaction: Add transaction
+    all_transactions: All transactions
+    amount: Amount
+    clear_filters: Clear filters
+    comment: Comment
+    date: Date
+    no_transactions: No transactions!
+    search: Search
+    transaction: Transaction
+    transaction_created: Transaction was successfully created.
+    transaction_destroyed: Transaction was successfully destroyed.
+    transaction_updated: Transaction was successfully updated.
+    your_last_transactions: Your last %{quantity} transactions

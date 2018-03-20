@@ -86,6 +86,7 @@ end
 
 group :test do
   gem 'faker'
+  gem 'i18n-tasks', '~> 0.9.21'
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers', '~> 3.1'
 end

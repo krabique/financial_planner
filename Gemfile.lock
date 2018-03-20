@@ -114,6 +114,9 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
+    easy_translate (0.5.1)
+      thread
+      thread_safe
     equalizer (0.0.11)
     erubi (1.7.0)
     execjs (2.7.0)
@@ -130,8 +133,19 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
+    highline (1.7.10)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    i18n-tasks (0.9.21)
+      activesupport (>= 4.0.2)
+      ast (>= 2.1.0)
+      easy_translate (>= 0.5.1)
+      erubi
+      highline (>= 1.7.3)
+      i18n
+      parser (>= 2.2.3.0)
+      rainbow (>= 2.2.2, < 4.0)
+      terminal-table (>= 1.5.1)
     ice_nine (0.11.2)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -322,7 +336,10 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     temple (0.8.0)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.20.0)
+    thread (0.2.2)
     thread_safe (0.3.6)
     tilt (2.0.8)
     turbolinks (5.1.0)
@@ -370,6 +387,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  i18n-tasks (~> 0.9.21)
   jbuilder (~> 2.5)
   kaminari
   listen (>= 3.0.5, < 3.2)
@@ -382,7 +400,6 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails-controller-testing
   ransack!
-  rails-controller-testing
   reek
   rspec-rails (~> 3.7)
   rspec_junit_formatter
