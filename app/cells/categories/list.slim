@@ -7,5 +7,7 @@ table.table.table-striped
         = I18n.t('categories.categorizable')
       th[scope="col"]
         '
+      th[scope="col"]
+        '
   tbody
     = cell(:categories, collection: @categories).(:item)

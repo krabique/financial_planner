@@ -4,10 +4,13 @@ en:
   categories:
     all_categories: All categories
     categorizable: Parent
+    category: Category
     category_created: Category was successfully created.
     category_destroyed: Category was successfully destroyed.
     category_updated: Category was successfully updated.
+    create_nested_category: Create nested category
     name: Name
+    new_category: New category
     you_cannot_change_the_parent: You cannot change the parent.
   errors:
     edit_oauth_profile: Can't edit your profile, since it is linked to %{provider}. You will have to change your info there.

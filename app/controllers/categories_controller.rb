@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   before_action :set_parent, only: %i[new create]
 
   def index
-    @categories = current_user.categories
+    @categories = Category.where(user: current_user)
   end
 
   def new
@@ -56,10 +56,10 @@ class CategoriesController < ApplicationController
     category_id = params[:category_id]
     return if category_id.blank?
 
-    Category.find_by(category_id)
+    current_user.categories.find_by(id: category_id)
   end
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name).merge(user: current_user)
   end
 end

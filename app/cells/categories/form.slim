@@ -2,7 +2,7 @@
   = f.error_notification
   .form-inputs
     = f.input :name
-    = f.input :categorizable, disabled: true, hint: I18n.t('categories.you_cannot_change_the_parent')
-    / = hidden_field_tag(:controller_name, @controller_name)
+    = f.input :categorizable, disabled: true, hint: I18n.t('categories.you_cannot_change_the_parent'), input_html: { value: model.categorizable.name }
+    = hidden_field_tag(:category_id, params[:category_id])
   .form-actions
     = f.button :submit, class: 'btn btn-primary'

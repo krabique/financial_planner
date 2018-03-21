@@ -4,6 +4,11 @@ tr
   td
     = model.categorizable.name
   td[align="right"]
+    = link_to(new_category_path(category_id: model.id), remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
+      i.fa.fa-plus[aria-hidden="true"]
+      '
+      = I18n.t('categories.create_nested_category')
+  td[align="right"]
     = link_to(edit_category_path(model), remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do
       i.fa.fa-pencil[aria-hidden="true"]
     '
