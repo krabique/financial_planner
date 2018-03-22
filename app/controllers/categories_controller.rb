@@ -44,6 +44,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_parent
+    # byebug
     @parent ||= current_category || current_user
   end
 
@@ -56,7 +57,8 @@ class CategoriesController < ApplicationController
     category_id = params[:category_id]
     return if category_id.blank?
 
-    current_user.categories.find_by(id: category_id)
+    # current_user.categories.find_by(id: category_id)
+    Category.find_by(user: current_user, id: category_id)
   end
 
   def category_params
