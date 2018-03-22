@@ -20,8 +20,8 @@ en:
       please_log_in: Please, log in or sign up to access the financial tracker.
       welcome_back: Welcome back, %{name}!
   navbar:
-    all_categories: All categories
-    all_transactions: All transactions
+    categories: Categories
+    activities: Activities
     hi_username: Hi, %{name}
     login: Log in
     logout: Logout

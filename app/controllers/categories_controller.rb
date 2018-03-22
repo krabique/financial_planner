@@ -44,7 +44,6 @@ class CategoriesController < ApplicationController
   private
 
   def set_parent
-    # byebug
     @parent ||= current_category || current_user
   end
 
