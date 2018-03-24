@@ -8,6 +8,8 @@ class CreateCategoryService
   end
 
   def call
+    # debugger.pry
+    # byebug
     parent.categories.create!(params)
   end
 
