@@ -5,6 +5,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :authorize_account_edit, only: %i[edit update]
 
+  DEFAULT_CATEGORIES = %w[Transportation Food House Entertainment Health Other].freeze
+
+  def create
+    super
+    DEFAULT_CATEGORIES.each do |category|
+      resource.sub_categories.create(name: category, user: resource)
+    end
+  end
+
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys:
       %i[name avatar avatar_cache remove_avatar])
