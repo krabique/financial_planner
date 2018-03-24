@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_category, only: %i[edit update destroy]
   before_action :set_parent, only: %i[new create]
 
@@ -52,7 +52,7 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
-    # authorize @category
+    authorize @category
   end
 
   def current_category
