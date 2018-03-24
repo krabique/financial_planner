@@ -14,5 +14,7 @@ class User < ApplicationRecord
   validates_processing_of :avatar
 
   has_many :transactions, dependent: :destroy
-  has_many :categories, as: :categorizable, dependent: :destroy, inverse_of: :categorizable
+  has_many :categories, dependent: :destroy
+  has_many :sub_categories, as: :categorizable, dependent: :destroy,
+                            inverse_of: :categorizable, class_name: 'Category'
 end

@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = @parent.categories.new
+    @category = @parent.sub_categories.new
     render :form
   end
 
@@ -20,10 +20,13 @@ class CategoriesController < ApplicationController
 
   def create
     @category = CreateCategoryService.new(parent: @parent, params: category_params).call
-    redirect_back fallback_location: root_path,
-                  notice: I18n.t('categories.category_created')
-  rescue ActiveRecord::RecordInvalid
-    render :form
+
+    if @category.persisted?
+      redirect_back fallback_location: root_path,
+                    notice: I18n.t('categories.category_created')
+    else
+      render :form
+    end
   end
 
   def update
@@ -54,10 +57,7 @@ class CategoriesController < ApplicationController
 
   def current_category
     category_id = params[:category_id]
-    return if category_id.blank?
-
-    # current_user.categories.find_by(id: category_id)
-    Category.find_by(user: current_user, id: category_id)
+    current_user.categories.find_by(id: category_id) if category_id.present?
   end
 
   def category_params

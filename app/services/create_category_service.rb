@@ -8,9 +8,7 @@ class CreateCategoryService
   end
 
   def call
-    # debugger.pry
-    # byebug
-    parent.categories.create!(params)
+    parent.sub_categories.create(params)
   end
 
   private
