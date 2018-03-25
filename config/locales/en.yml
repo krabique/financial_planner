@@ -34,6 +34,7 @@ en:
     add_transaction: Add transaction
     all_transactions: All transactions
     amount: Amount
+    category: Category
     clear_filters: Clear filters
     comment: Comment
     date: Date
