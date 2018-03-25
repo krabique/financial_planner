@@ -19,8 +19,11 @@ class OauthService
   end
 
   def create_or_update_user
-    user = User.where(provider: auth.provider, uid: auth.uid)
-      .first_or_create(user_credentials)
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
+    unless user
+      user = User.create!(user_credentials)
+      CreateStandardCategoriesService.new(user: user).call
+    end
     user.update!(user_credentials)
     user
   end
