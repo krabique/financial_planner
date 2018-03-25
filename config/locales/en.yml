@@ -11,6 +11,7 @@ en:
     create_nested_category: Create nested category
     name: Name
     new_category: New category
+    transfer_money_to_category: Transfer money to category
     you_cannot_change_the_parent: You cannot change the parent.
   errors:
     edit_oauth_profile: Can't edit your profile, since it is linked to %{provider}. You will have to change your info there.
@@ -36,6 +37,7 @@ en:
     clear_filters: Clear filters
     comment: Comment
     date: Date
+    kind: Kind
     no_transactions: No transactions!
     search: Search
     transaction: Transaction

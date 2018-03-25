@@ -4,6 +4,8 @@ tr
   td
     = model.comment
   td
+    = model.kind
+  td
     = model.date.strftime("%Y-%m-%d")
   td[align="right"]
     = link_to(edit_transaction_path(model), remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window') do

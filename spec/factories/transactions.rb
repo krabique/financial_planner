@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :transaction do
     amount      { Faker::Number.decimal(2) }
     comment     { Faker::DrWho.quote[0..79] }
+    kind        { 'income' }
     user
     date { Time.current }
 
