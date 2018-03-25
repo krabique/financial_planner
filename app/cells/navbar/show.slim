@@ -16,7 +16,9 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-danger
             = @balance.symbol
             = @balance
           li.nav-item.active.nav-link
-            ' (open money
+            | (
+            = I18n.t('navbar.open_money')
+            '
             = @open_money.symbol
             = @open_money
             | )

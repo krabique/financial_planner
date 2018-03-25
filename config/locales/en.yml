@@ -26,6 +26,7 @@ en:
     hi_username: Hi, %{name}
     login: Log in
     logout: Logout
+    open_money: open money
     signup: Register
     title: Financial Tracker
   not_authorized: You are not authorized to perform this action.
