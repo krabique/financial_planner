@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   before_action :set_parent, only: %i[new create]
 
   def index
-    @categories = Category.where(user: current_user)
+    @categories = Category.where(user: current_user).order(:name)
   end
 
   def new
