@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :category do
-    category nil
+    name { Faker::DrWho.quote[0..79] }
   end
 end
