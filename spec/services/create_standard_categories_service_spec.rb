@@ -17,13 +17,12 @@ RSpec.describe CreateStandardCategoriesService, type: :service do
   end
 
   describe '#call' do
+    let(:user_categories) { user.categories.pluck(:name) }
+
     it 'creates default categories for the given user' do
       subject.call
-      expect(Category.count).to eq 6
-
-      DEFAULT_CATEGORIES.reverse.each_with_index do |category, index|
-        expect(user.categories[index].name).to eq category
-      end
+      expect(user.categories.count).to eq 6
+      expect(user_categories).to match_array(DEFAULT_CATEGORIES)
     end
   end
 end
