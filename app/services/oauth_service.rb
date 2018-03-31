@@ -19,13 +19,19 @@ class OauthService
   end
 
   def create_or_update_user
-    user = User.find_by(provider: auth.provider, uid: auth.uid)
-    unless user
-      user = User.create!(user_credentials)
-      CreateStandardCategoriesService.new(user: user).call
-    end
+    user = find_user || create_user
     user.update!(user_credentials)
     user
+  end
+
+  def create_user
+    user = User.create!(user_credentials)
+    CreateStandardCategoriesService.new(user: user).call
+    user
+  end
+
+  def find_user
+    User.find_by(provider: auth.provider, uid: auth.uid)
   end
 
   def oauth_user_credentials
