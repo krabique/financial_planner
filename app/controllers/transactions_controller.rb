@@ -11,7 +11,8 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = current_user.transactions.new(
-      category_id: params[:category_id]
+      category_id: params[:category_id],
+      kind: params[:kind]
     )
     render :form
   end

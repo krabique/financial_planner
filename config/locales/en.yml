@@ -3,6 +3,7 @@ en:
   are_you_sure: Are you sure?
   categories:
     all_categories: All categories
+    balance: Balance
     categorizable: Parent
     category: Category
     category_created: Category was successfully created.

@@ -6,7 +6,11 @@ tr
   td
     = model.kind
   td
-    = model.category.name if model.category
+    - if model.category
+      = model.category.name
+      '
+      = link_to(new_transaction_path(category_id: model.category.id, kind: 'transfer'), remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window') do
+        i.fa.fa-credit-card[aria-hidden="true"]
   td
     = model.date.strftime("%Y-%m-%d")
   td[align="right"]

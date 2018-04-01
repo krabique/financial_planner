@@ -7,17 +7,21 @@ class BalanceService
   end
 
   def balance
-    @_balance ||= incomes - expenses
+    incomes - expenses
   end
 
   def open_money
-    user.transactions.where(kind: 'income', category_id: nil).sum(:amount_cents)
-      .to_money / 100
+    incomes - transfers_to_category
   end
 
   private
 
   attr_accessor :user
+
+  def transfers_to_category
+    user.transactions.where(kind: 'transfer').where.not(category_id: nil)
+      .sum(:amount_cents).to_money / 100
+  end
 
   def incomes
     sum_query('income')

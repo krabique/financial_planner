@@ -3,8 +3,10 @@ tr
     = model.name
   td
     = model.categorizable.name
+  td
+    = @balance
   td[align="right"]
-    = link_to(new_transaction_path(category_id: model.id), remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window') do
+    = link_to(new_transaction_path(category_id: model.id, kind: 'transfer'), remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window') do
       i.fa.fa-credit-card[aria-hidden="true"]
       '
       = I18n.t('categories.transfer_money_to_category')
