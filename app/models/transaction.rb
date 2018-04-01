@@ -8,6 +8,7 @@ class Transaction < ApplicationRecord
   enumerize :kind, in: KIND_TYPES
 
   belongs_to :category, optional: true
+  belongs_to :origin, class_name: 'Category', optional: true, inverse_of: :transactions
   belongs_to :user
 
   monetize :amount_cents
