@@ -5,6 +5,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :authorize_account_edit, only: %i[edit update]
 
+  def create
+    super
+    CreateStandardCategoriesService.new(user: resource).call
+  end
+
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys:
       %i[name avatar avatar_cache remove_avatar])
