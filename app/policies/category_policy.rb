@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Authorizations for transactions
-class TransactionPolicy < ApplicationPolicy
+# Authorizations for categories
+class CategoryPolicy < ApplicationPolicy
   def update?
     record_belongs_to_user?
   end
