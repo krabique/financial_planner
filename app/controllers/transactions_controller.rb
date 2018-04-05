@@ -12,7 +12,7 @@ class TransactionsController < ApplicationController
   def new
     @transaction = current_user.transactions.new(
       category_id: params[:category_id],
-      kind: params[:kind]
+      kind: params[:kind] || 'income'
     )
     render :form
   end
@@ -55,6 +55,8 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :comment, :date, :kind, :category_id)
+    params.require(:transaction)
+      .permit(:amount, :comment, :date, :kind, :category_id)
+      .merge(kind: @transaction&.kind || params[:kind] || params[:transaction][:kind])
   end
 end

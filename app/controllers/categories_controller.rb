@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.where(user: current_user).order(:name)
+    @transactions = current_user.transactions.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new

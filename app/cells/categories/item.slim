@@ -6,7 +6,12 @@ tr
   td
     = @balance
   td[align="right"]
-    = link_to(new_transaction_path(category_id: model.id, kind: 'transfer'), remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window') do
+    = link_to(new_transaction_path(category_id: model.id, kind: 'expense'), remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window') do
+      i.fa.fa-money[aria-hidden="true"]
+      '
+      = I18n.t('categories.spend_money')
+  td[align="right"]
+    = link_to(new_transaction_path(category_id: model.id, kind: 'open_transfer'), remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window') do
       i.fa.fa-credit-card[aria-hidden="true"]
       '
       = I18n.t('categories.transfer_money_to_category')

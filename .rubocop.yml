@@ -134,6 +134,7 @@ MethodLength:
   Max: 10
   Exclude:
     - 'spec/**/*'
+    - 'app/cells/transactions_cell.rb'
 
 Metrics/LineLength:
   Max: 105

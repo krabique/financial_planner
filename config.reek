@@ -35,6 +35,14 @@ DuplicateMethodCall:
     - OauthSpecSupport#stub_omniauth
     - OauthSpecSupport#user_credentials
 
+TooManyStatements:
+  exclude:
+    - TransactionsCell#form
+
+NilCheck:
+  exclude:
+    - TransactionsController#transaction_params
+
 "app/cells":
   ControlParameter:
     enabled: false

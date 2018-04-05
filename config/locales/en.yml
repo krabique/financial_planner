@@ -12,6 +12,7 @@ en:
     create_nested_category: Create nested category
     name: Name
     new_category: New category
+    spend_money: Spend money
     transfer_money_to_category: Transfer money to category
     you_cannot_change_the_parent: You cannot change the parent.
   errors:

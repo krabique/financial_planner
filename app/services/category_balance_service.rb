@@ -15,7 +15,7 @@ class CategoryBalanceService
   attr_accessor :category
 
   def incomes
-    sum_query('transfer')
+    sum_query('open_transfer')
   end
 
   def expenses

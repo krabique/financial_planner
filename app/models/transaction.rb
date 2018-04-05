@@ -3,7 +3,7 @@
 class Transaction < ApplicationRecord
   extend Enumerize
 
-  KIND_TYPES = %i[income expense transfer].freeze
+  KIND_TYPES = %i[income expense open_transfer category_transfer].freeze
 
   enumerize :kind, in: KIND_TYPES
 

@@ -19,7 +19,7 @@ class BalanceService
   attr_accessor :user
 
   def transfers_to_category
-    user.transactions.where(kind: 'transfer').where.not(category_id: nil)
+    user.transactions.where(kind: 'open_transfer').where.not(category_id: nil)
       .sum(:amount_cents).to_money / 100
   end
 

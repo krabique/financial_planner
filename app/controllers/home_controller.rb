@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
   def index
     current_user_transactions = current_user.transactions
-    @transaction = current_user_transactions.new
+    @transaction = current_user_transactions.new(kind: 'income')
     @transactions = current_user_transactions.last_ten
   end
 
