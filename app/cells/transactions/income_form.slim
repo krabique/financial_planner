@@ -2,10 +2,9 @@
   = f.error_notification
   .form-inputs
     = f.input :amount, as: :decimal
-    = f.input :kind
     = f.input :comment
-    = f.input :category_id, collection: current_user.categories
     = f.input :date, discard_hour: true
     = hidden_field_tag(:controller_name, @controller_name)
+    = hidden_field_tag(:kind, 'income')
   .form-actions
     = f.button :submit, class: 'btn btn-primary'

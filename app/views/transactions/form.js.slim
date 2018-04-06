@@ -1,5 +1,5 @@
 - if params[:controller_name] == 'home'
-  | $("#home_new_transaction_form").html("#{escape_javascript(cell(:transactions, @transaction).(:form))}");
+  | $("#home_new_transaction_form").html("#{escape_javascript(cell(:transactions, @transaction).(:form, 'home'))}");
 - else
   | $("#modal-window").html("#{escape_javascript(cell(:transactions, @transaction).(:modal))}");
   | $('#modal-window').modal('show');

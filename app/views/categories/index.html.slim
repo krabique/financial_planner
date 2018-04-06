@@ -5,3 +5,12 @@ h3.text-center
   '
   = I18n.t('categories.new_category')
 = cell(:categories).(:list, @categories)
+
+- if @transactions.empty?
+  h4.text-center
+    = I18n.t('transactions.no_transactions')
+- else
+  h3.text-center
+    = I18n.t('transactions.all_transactions')
+  = cell(:transactions).(:list, @transactions)
+= paginate @transactions

@@ -98,6 +98,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    declarative (0.0.10)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -110,6 +111,12 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    disposable (0.4.3)
+      declarative (>= 0.0.9, < 1.0.0)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber (< 0.2.0)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
@@ -117,6 +124,8 @@ GEM
     easy_translate (0.5.1)
       thread
       thread_safe
+    enumerize (2.2.2)
+      activesupport (>= 3.2)
     equalizer (0.0.11)
     erubi (1.7.0)
     execjs (2.7.0)
@@ -267,6 +276,16 @@ GEM
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
       rainbow (~> 2.0)
+    reform (2.2.4)
+      disposable (>= 0.4.1)
+      representable (>= 2.4.0, < 3.1.0)
+    reform-rails (0.1.7)
+      activemodel (>= 3.2)
+      reform (>= 2.2.0)
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -385,6 +404,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  enumerize
   factory_bot_rails
   faker
   i18n-tasks (~> 0.9.21)
@@ -401,6 +421,8 @@ DEPENDENCIES
   rails-controller-testing
   ransack!
   reek
+  reform
+  reform-rails
   rspec-rails (~> 3.7)
   rspec_junit_formatter
   rubocop (~> 0.52.1)

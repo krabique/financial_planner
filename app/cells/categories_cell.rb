@@ -12,6 +12,7 @@ class CategoriesCell < ApplicationCell
   end
 
   def item
+    @balance = CategoryBalanceService.new(model).call
     render
   end
 

@@ -3,6 +3,7 @@ en:
   are_you_sure: Are you sure?
   categories:
     all_categories: All categories
+    balance: Balance
     categorizable: Parent
     category: Category
     category_created: Category was successfully created.
@@ -11,6 +12,8 @@ en:
     create_nested_category: Create nested category
     name: Name
     new_category: New category
+    spend_money: Spend money
+    transfer_money_to_category: Transfer money to category
     you_cannot_change_the_parent: You cannot change the parent.
   errors:
     edit_oauth_profile: Can't edit your profile, since it is linked to %{provider}. You will have to change your info there.
@@ -25,6 +28,7 @@ en:
     hi_username: Hi, %{name}
     login: Log in
     logout: Logout
+    open_money: open money
     signup: Register
     title: Financial Tracker
   not_authorized: You are not authorized to perform this action.
@@ -33,9 +37,11 @@ en:
     add_transaction: Add transaction
     all_transactions: All transactions
     amount: Amount
+    category: Category
     clear_filters: Clear filters
     comment: Comment
     date: Date
+    kind: Kind
     no_transactions: No transactions!
     search: Search
     transaction: Transaction
